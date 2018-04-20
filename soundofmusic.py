@@ -25,13 +25,12 @@ def note_to_int(note):
         if NOTE_LETTERS[i] == note[:1]:
             #The + change is for if the user put a # or a b
             return NOTE_NUMBERS[i] + change
-    #Returns -1 if note is not valid
+    #Returns -1 if note is invalid
     return -1
 
 
 #Fixed method and made it more efficient 4/6/18
 def note_to_scale(note, type):
-    #Makes a new list
     notes = []
     #If the scale is minor, change values according to minor list and append to notes
     if type == "minor":
@@ -85,7 +84,6 @@ def play_notes(notes):
 #Make sure there are notes to play
 def menu_play_notes():
     n = get_notes()
-    #If none of the notes are recognized, print error
     if len(n) == 0:
         print("I don't know any of these notes.")
     else:
@@ -95,13 +93,11 @@ def menu_play_notes():
 #Ask the user for a scale and validate it
 def get_scale():
     scale = input("Please enter a scale name (Ex. C major): \n")
-    #Splits to get each part
     sc = scale.split(" ")
     #If the user only puts in "B" instead of "B major", append a space
     #Into the list so the program won't crash
     if len(sc) == 1:
         sc.append(" ")
-    #Validates scale to make sure its in the right format and corect note
     while ((sc[1] != "minor" and sc[1] != "major") or note_to_int(sc[0]) == -1):
         #Does the steps again so program will work as intended
         scale = input("Please enter a scale name (Ex C major): \n")
@@ -125,7 +121,6 @@ def menu_play_scale():
     scale_int = note_to_scale(note, scale_list[1])
     play_scale(scale_int)
 
-#Main method, runs the respective methods for the user's choice
 def main():
     while True:
         print_menu()
