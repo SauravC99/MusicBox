@@ -1,4 +1,4 @@
-#Provided by Neal Terrel - CSULB
+#Provided by Neal Terrell - CSULB
 import pygame
 import time
 import pygame.midi
