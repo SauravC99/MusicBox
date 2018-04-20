@@ -28,9 +28,7 @@ def note_to_int(note):
     #Returns -1 if note is not valid
     return -1
 
-#Broken 4/2/18
-#Fixed 4/3/18
-#Broken again 4/5/18
+
 #Fixed method and made it more efficient 4/6/18
 def note_to_scale(note, type):
     #Makes a new list
@@ -93,8 +91,7 @@ def menu_play_notes():
     else:
         play_notes(n)
 
-#Validation deoesn't work 3/30/18
-#Fixed 4/3/18
+
 #Ask the user for a scale and validate it
 def get_scale():
     scale = input("Please enter a scale name (Ex. C major): \n")
@@ -104,8 +101,6 @@ def get_scale():
     #Into the list so the program won't crash
     if len(sc) == 1:
         sc.append(" ")
-    #FIXME Validation doesn't work all the time
-    #FIXED
     #Validates scale to make sure its in the right format and corect note
     while ((sc[1] != "minor" and sc[1] != "major") or note_to_int(sc[0]) == -1):
         #Does the steps again so program will work as intended
